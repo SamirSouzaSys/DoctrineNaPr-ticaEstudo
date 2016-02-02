@@ -1,6 +1,7 @@
 <?php
 //AutoLoader do Composer
 $loader = require __DIR__.'/vendor/autoload.php';
+
 //Vamos adicionar nossas classes ao AutoLoader
 $loader->add('DoctrineNaPratica',__DIR__.'/src');
 
@@ -19,14 +20,14 @@ $paths = array(__DIR__ . '/src/DoctrineNaPratica/Model');
 $dbParams = array(
                   'driver' =>'pdo_mysql',
                   'user' => 'root',
-                  'password' => '123456',
+                  'password' => '',
                   'dbname' => 'dnp',
                   );
 
 $config = Setup::createConfiguration($isDevMode);
 
 //leitor das annotations das entidades
-$driver = newAnnotationDriver(new AnnotationReader(), $paths);
+$driver = new AnnotationDriver(new AnnotationReader(), $paths);
 $config->setMetadataDriverImpl($driver);
 //registra as annotations do Doctrine
 AnnotationRegistry::registerFile(

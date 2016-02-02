@@ -42,50 +42,54 @@ Class User{
   private $avatar;
 
   /**
+  *@ORM\OneToOne(targetEntity="Subscription", mappedBy="user", cascade={"all"})
+  */
+  private $subscription;
+
+
+  /**
    * @return integer
    */
-  public function getId()
-  {
+  public function getId(){
     return $this->id;
   }
 
-  public function getName()
-  {
+  public function getName()  {
     return $this->name;
   }
 
-  public function setName($name)
-  {
+  public function setName($name)  {
     return $this->name = $name;
   }
 
-  public function getLogin()
-  {
+  public function getLogin()  {
     return $this->login;
   }
 
-  public function setLogin($login)
-  {
+  public function setLogin($login)  {
     return $this->login = $login;
   }
 
-  public function getEmail()
-  {
+  public function getEmail()  {
     return $this->email;
   }
 
-  public function setEmail($email)
-  {
+  public function setEmail($email)  {
     return $this->email = $email;
   }
 
-  public function getAvatar()
-  {
+  public function getAvatar()  {
     return $this->avatar;
   }
 
-  public function setAvatar($avatar)
-  {
+  public function setAvatar($avatar)  {
     return $this->avatar = $avatar;
+  }
+  public function getSubscription(){
+    return $this->subscription;
+  }
+
+  public function setSubscription($subscription){
+    return $this->subscription = $subscription;
   }
 }

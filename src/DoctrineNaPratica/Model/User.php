@@ -12,7 +12,7 @@ Class User{
   * @ORM\GeneratedValue
   * @var integer
   */
-  protected $Id;
+  protected $id;
 
   /**
   * @ORM\Column(type = "string", length=150)

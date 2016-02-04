@@ -54,19 +54,19 @@ class User{
   private $enrollmentCollection;
 
   /**
-  * @ORM\OneToMany(targetEntity="Course", mappedBy="teacher", cascade={"all"}, orphanRemoval="true", fetch="LAZY")
-  *
-  * @var Doctrine\Common\Collections\Collection
-  */
+   * @ORM\OneToMany(targetEntity="Course", mappedBy="teacher", cascade={"all"}, orphanRemoval=true, fetch="LAZY")
+   *
+   * @var Doctrine\Common\Collections\Collection
+   */
   protected $courseCollection;
 
   /**
-  * @ORM\ManyToMany(targetEntity="Lesson", inversedBy="userLessons", cascadeAll={"all"})
-  * @ORM\JoinTable(name="LessonUser",
-  *               joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-  *               inverseJoinColumns={@ORM\JoinColumn(name="lesson_id", referencedColumnName=\"id")}
-  *               )
-  */
+   * @ORM\ManyToMany(targetEntity="Lesson", inversedBy="userLessons", cascade={"all"})
+   * @ORM\JoinTable(name="LessonUser",
+   *   joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+   *   inverseJoinColumns={@ORM\JoinColumn(name="lesson_id", referencedColumnName="id")}
+   * )
+   */
   private $lessonCollection;
 
   /**

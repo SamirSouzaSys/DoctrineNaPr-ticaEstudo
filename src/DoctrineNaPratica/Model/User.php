@@ -69,6 +69,13 @@ class User{
    */
   private $lessonCollection;
 
+/**
+* @ORM\OneToMany(targetEntity="Profile", mappedBy="user", cascade={"all"}, orphanRemoval=true, fetch="LAZY")
+*
+* @var Doctrine\Common\Collections\Collection
+*/
+protected $profileCollection;
+
   /**
    * @return integer
    */
@@ -140,9 +147,19 @@ class User{
     return $this->lessonCollection = $lessonCollection;
   }
 
+  public function getProfileCollection()
+  {
+    return $this->profileCollection;
+  }
+  public function setProfileCollection($profileCollection)
+  {
+    return $this->profileCollection = $profileCollection;
+  }
+
   public function __construct(){
     $this->courseCollection = new ArrayCollection;
     $this->lessonCollection = new ArrayCollection;
     $this->enrollmentCollection = new ArrayCollection;
+    $this->profileCollection = new ArrayCollection;
   }
 }

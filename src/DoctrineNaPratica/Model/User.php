@@ -45,7 +45,8 @@ class User{
   private $avatar;
 
   /**
-  * @ORM\OneToOne(targetEntity="Subscription", mappedBy="user")
+  * ORM\OneToOne(targetEntity="Subscription", mappedBy="user")
+  * @ORM\OneToOne(targetEntity="Subscription", mappedBy="user", cascade={"all"})
   */
   private $subscription;
 

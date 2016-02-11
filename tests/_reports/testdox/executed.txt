@@ -1,3 +1,17 @@
+DoctrineNaPratica\Model\Dbal
+ [x] User
+ [x] User parameters
+
+DoctrineNaPratica\Model\Dql
+ [x] User
+ [x] User lesson
+ [x] User parameters
+
 DoctrineNaPratica\Model\User
  [x] User
+ [x] User subscription
+ [x] User enrollment
+ [x] User course
+ [x] User lesson
+ [x] User profile
 

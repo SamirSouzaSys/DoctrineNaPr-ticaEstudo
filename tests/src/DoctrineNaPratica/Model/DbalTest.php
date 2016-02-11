@@ -1,5 +1,6 @@
 <?php
 
+
 namespace DoctrineNaPratica\Model;
 
 use DoctrineNaPratica\Test\TestCase;
@@ -39,7 +40,7 @@ class DbalTest extends TestCase{
     }
   }
 
-  public function tearDown(){
+  public function tearDown() {
     $this->schema->dropTable("users");
   }
 
@@ -49,13 +50,13 @@ class DbalTest extends TestCase{
 //inicia uma transação
     $this->conn->beginTransaction();
     $this->conn->insert('users', array(
-                        'name' => 'Steve Jobs', 'login' => 'steve', 'email' => 'steve@apple.c\
-                        om', 'avatar' => 'steve.png'
+                        'name' => 'Steve Jobs', 'login' => 'steve', 'email' => 'steve@apple.com',
+                        'avatar' => 'steve.png'
                         ));
 
     $this->conn->insert('users', array(
-                        'name' => 'Bill Gates', 'login' => 'bill', 'email' => 'bill@microsoft\
-                        .com', 'avatar' => 'bill.png'
+                        'name' => 'Bill Gates', 'login' => 'bill', 'email' => 'bill@microsoft.com',
+                        'avatar' => 'bill.png'
                         ));
 //commit da transação
     $this->conn->commit();
@@ -75,13 +76,13 @@ class DbalTest extends TestCase{
 //inicia uma transação
     $this->conn->beginTransaction();
     $this->conn->insert('users', array(
-                        'name' => 'Steve Jobs', 'login' => 'steve', 'email' => 'steve@apple.c\
-                        om', 'avatar' => 'steve.png'
+                        'name' => 'Steve Jobs', 'login' => 'steve', 'email' => 'steve@apple.com',
+                        'avatar' => 'steve.png'
                         ));
 
     $this->conn->insert('users', array(
-                        'name' => 'Bill Gates', 'login' => 'bill', 'email' => 'bill@microsoft\
-                        .com', 'avatar' => 'bill.png'
+                        'name' => 'Bill Gates', 'login' => 'bill', 'email' => 'bill@microsoft.com',
+                        'avatar' => 'bill.png'
                         ));
 //commit da transação
     $this->conn->commit();
